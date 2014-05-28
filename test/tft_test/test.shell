@@ -1,0 +1,9 @@
+mkdir temp
+mkdir config
+mkdir state
+word | mkdir $word
+if test == 'true' then
+	mkdir 'test'
+else
+	print 'No Test'
+end if

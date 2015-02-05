@@ -5,7 +5,6 @@ Created on 2013年7月13日
 
 @author: huiyugeng
 '''
-import types
 
 import ndb
 
@@ -15,7 +14,7 @@ import regex
 载入解析映射
 '''
 def load_map(map_file):
-    map_struct = ndb.load(map_file)
+    map_struct = ndb.read(map_file)
     map_list = ndb.execute(map_struct, 'select: map')
 
     return map_list

@@ -15,7 +15,7 @@ import text
 载入规则映射
 '''
 def load_rule(rule_file):
-    rule_struct = ndb.load(rule_file)
+    rule_struct = ndb.read(rule_file)
     rule_list = ndb.execute(rule_struct, 'select:rule')
     
     return rule_list

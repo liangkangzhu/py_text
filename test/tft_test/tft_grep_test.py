@@ -1,16 +1,13 @@
 #coding=utf-8
 
 '''
-Created on 2012-8-14
+grep单元测试
 
 @author: Huiyugeng
 '''
 import unittest
 import text
 
-'''
-grep单元测试
-'''
 class QueryTest(unittest.TestCase):
 
 

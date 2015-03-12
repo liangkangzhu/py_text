@@ -1,7 +1,7 @@
 #coding=utf-8
 
 '''
-Created on 2012-5-26
+正则表达式工具
 
 @author: Huiyugeng
 '''

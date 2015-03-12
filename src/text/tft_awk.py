@@ -1,7 +1,7 @@
 #coding=utf-8
 
 '''
-Created on 2012-8-15
+python awk工具
 
 @author: Huiyugeng
 '''
@@ -10,7 +10,8 @@ import tft_grep
 import types
 
 '''
-awk
+awk功能
+
 @param regex: 需要匹配的正则表达式，如果为None或空字符串则忽略
 @param target: 需要解析的目标，通常为一个list
 @param split: 分隔符
@@ -19,7 +20,7 @@ awk
 @return: 解析后的结果
 
 @summary: list= ['1:huyugeng:male', '2:zhuzhu:male'];print awk.awk('', _list, ':', [1]); 
-            结果 ['huiyugeng', 'zhuzhu']
+            结果 ['Huiyugeng', 'zhuzhu']
 '''
 def awk(regex, target, split, column):
     _list = __list(target)

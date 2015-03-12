@@ -1,16 +1,19 @@
+#coding=utf-8
+
 '''
-Created on 2013-2-24
+内容对比工具
 
 @author: Huiyugeng
 '''
 import difflib
 
 '''
-compare differnet between two files
-@param src_filename: Source Filename
-@param dst_filename: Destination Filename  
+对比两个文本文件之间的不同
 
-@return: two files differents
+@param src_filename: 源文件
+@param dst_filename: 目标文件 
+
+@return: 文件内容的不同
 '''
 def diff_file(src_filename, dst_filename):
     
@@ -24,11 +27,12 @@ def diff_file(src_filename, dst_filename):
     return diff_text(src_file_context, dst_file_context)
 
 '''
-compare differnet between two string
-@param src_context: Source Context
-@param dst_context: Destination Context  
+对比两个字符串
 
-@return: two string differents
+@param src_context: 源字符串内容
+@param dst_context: 目标字符串内容  
+
+@return: 两个字符串的不同
 '''  
 def diff_text(src_context, dst_context):
     seq_matcher = difflib.SequenceMatcher(None, src_context, dst_context)

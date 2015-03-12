@@ -1,7 +1,7 @@
 #coding=utf-8
 
 '''
-Created on 2012-8-14
+基于正则表达式的内容映射单元测试
 
 @author: Huiyugeng
 '''
@@ -15,7 +15,7 @@ class RegexMapTest(unittest.TestCase):
 
 
     def test_reflect(self):
-        map_list = regex_map.load_map('regex.map')
+        map_list = regex_map.load_map('../../resource/regex.map')
         
         line = 'FW log:name=ASA5505;time=2013-07-10;action=permit;value=45'
         print regex_map.reflect(map_list, line)

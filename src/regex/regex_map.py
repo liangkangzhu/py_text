@@ -1,9 +1,9 @@
 #coding=utf-8
 
 '''
-Created on 2013年7月13日
+基于正则表达式的内容映射
 
-@author: huiyugeng
+@author: Huiyugeng
 '''
 
 import ndb

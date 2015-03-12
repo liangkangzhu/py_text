@@ -1,14 +1,14 @@
 #coding=utf-8
 
 '''
-Created on 2012-10-28
+文本文件操作工具
 
 @author: Huiyugeng
 '''
 
-
 '''
-载入文件为一个列表（针对UTF-8文本文件），文件每一行为一个列表项
+载入文件为一个列表（针对UTF-8文本文件）
+
 @param filename: 需要载入的文件名
 
 @return: 文本文件内容列表 
@@ -25,6 +25,7 @@ def load_file_as_list(filename):
 
 '''
 载入文件内容（针对UTF-8文本文件）
+
 @param filename: 需要载入的文件名
 
 @return: 文本文件内容 
@@ -41,6 +42,9 @@ def load_file(filename):
 
 '''
 载入配置文件（仅支持UTF-8文本文件）
+配置文件采用 key = value的形式
+支持"#"作为注释符
+
 @param filename: 配置文件
 
 @return: key-value模式配置内容 
@@ -68,8 +72,9 @@ def load_property(filename):
 
 '''
 保存配置文件
+
 @param filename: 配置文件名
-@param config: key-value模式配置内容 
+@param config: key-value模式配置内容 和注释内容
 '''
 def save_property(filename, config):
     try:

@@ -1,7 +1,7 @@
 #coding=utf-8
 
 '''
-Created on 2012-8-15
+python grep工具
 
 @author: Huiyugeng
 '''
@@ -10,6 +10,7 @@ import types
 
 '''
 grep功能
+
 @param regex_exp: 正则表达式，
 @param target：需要匹配的目标，list或文件名，
 @param model： 模式, E为正则表达式模式，N为行数模式（支持负行数），

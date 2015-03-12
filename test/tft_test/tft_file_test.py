@@ -1,23 +1,20 @@
 #coding=utf-8
 
 '''
-Created on 2012-8-14
+tft_file单元测试
 
 @author: Huiyugeng
 '''
 import unittest
 import text
 
-'''
-tft_tools单元测试
-'''
 class TxtFileTest(unittest.TestCase):
 
 
     def test_property_file(self):
-        filename = 'test.cfg'
+        filename = '../../resource/test.cfg'
         config = text.load_property(filename)
-        filename = 'test1.cfg'
+        filename = '../../resource/test_new.cfg'
         text.save_property(filename, config)
         
 

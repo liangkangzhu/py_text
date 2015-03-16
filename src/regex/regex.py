@@ -16,7 +16,7 @@ import re
 
 @return: 解析的结果 
 '''
-def get_line(regex ,line):
+def get_line(regex , line):
     items = []
     
     pattern = re.compile(regex)
@@ -41,3 +41,27 @@ def check_line(regex, line):
         return True
     else:
         return False
+    
+'''
+根据指定正则表达式匹配的结果进行替换
+
+@param regex: 正则表达式
+@param repl: 替换的内容
+@param line: 需要匹配的字符串
+@param count: 匹配替换的个数,0表示任意个数
+
+@return: 匹配替换后的结果
+'''
+def sub(regex, repl, line, count=0):
+    return re.sub(regex, repl, line, count)
+
+'''
+根据指定正则表达式匹配的结果进行分割字符串
+
+@param regex: 正则表达式
+@param line: 分割的内容
+
+@return: 分割后的结果，list类型
+'''
+def split(regex, line):
+    return re.split(regex, line)

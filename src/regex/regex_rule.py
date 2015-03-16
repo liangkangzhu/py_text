@@ -48,9 +48,10 @@ def match(rule_list, lines):
         for key in match_result:
             expect = expect.replace(key, str(match_result.get(key)))
         
-        result[name] = eval(expect)
+        #result[name] = eval(expect)
+        rule_item['result'] = eval(expect)
 
-    return result
+    return rule_list
 
 def __is_match(lines, exp_function, exp_pattern, exp_type):
     result = False

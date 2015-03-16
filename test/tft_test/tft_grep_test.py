@@ -15,9 +15,9 @@ class QueryTest(unittest.TestCase):
         _list = ['hello world', 'hello girl', 'just want to say hello', 'no he', 'no hell']
         print text.grep('hello', _list, '', True)
         
-        print text.grep('mkdir', 'test.shell', '', True)
+        print text.grep('mkdir', '../../resource/test.shell', '', True)
         
-        print text.grep('[1,3]', 'test.shell', 'N', True)
+        print text.grep('[1,3]', '../../resource/test.shell', 'N', True)
 
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']

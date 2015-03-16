@@ -24,6 +24,20 @@ def load_file_as_list(filename):
     return file_info
 
 '''
+保存文件内容
+@param filename: 需要保存的文件名
+@param file_content_list: 需要保存的文件内容(列表形式)  
+'''
+def save_file(filename, file_content_list):
+    try:
+        _file = open(filename, 'w')
+        for line in file_content_list:
+            _file.write(line)
+        _file.close()
+    except IOError:
+        pass
+
+'''
 载入文件内容（针对UTF-8文本文件）
 
 @param filename: 需要载入的文件名
@@ -49,20 +63,23 @@ def load_file(filename):
 
 @return: key-value模式配置内容 
 '''
-def load_property(filename):
+def load_property(filename, use_comment=False):
     config = {}
     try:
         _file = open(filename , 'r')
         comment = ''
         for line in _file.readlines():
             line = line.strip()
-            if line.startswith('#') == False:
+            if line.startswith('#') == False and line != '':
                 key, value = line.split('=')
-                config[key] = {}
-                config[key]['value'] = value.strip()
-                if comment != '':
-                    config[key]['comment'] = comment
-                    comment = ''
+                if use_comment :
+                    config[key] = {}
+                    config[key]['value'] = value.strip()
+                    if comment != '':
+                        config[key]['comment'] = comment
+                        comment = ''
+                else:
+                    config[key] = value.strip()
             else:
                 comment = line[1:len(line)]
         _file.close()
@@ -81,10 +98,13 @@ def save_property(filename, config):
         _file = open(filename, 'w')
         for key in config.keys():
             _config_item = config.get(key)
-            if _config_item.has_key('comment'):
-                _file.write('#{0}\n'.format(_config_item.get('comment')))
-            if _config_item.has_key('value'):
-                _file.write('{0}={1}\n'.format(key, _config_item.get('value')))
+            if isinstance(_config_item, dict):
+                if _config_item.has_key('comment'):
+                    _file.write('#{0}\n'.format(_config_item.get('comment')))
+                if _config_item.has_key('value'):
+                    _file.write('{0}={1}\n'.format(key, _config_item.get('value')))
+            else:
+                _file.write('{0}={1}\n'.format(key, _config_item))
         _file.close()
     except IOError:
         pass

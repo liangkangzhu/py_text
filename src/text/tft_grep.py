@@ -7,6 +7,7 @@ python grep工具
 '''
 import regex
 import types
+import tft_file
 
 '''
 grep功能
@@ -60,10 +61,7 @@ def __list(target):
     if type(target) == types.ListType:
         _list = target
     elif type(target) == types.StringType:
-        _file = open(target , 'r')
-        for line in _file.readlines():
-            _list.append(line)
-        _file.close()
+        _list = tft_file.load_file_as_list(target)
     
     return _list
 

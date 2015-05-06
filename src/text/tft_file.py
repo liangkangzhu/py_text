@@ -17,7 +17,7 @@ def load_file_as_list(filename):
     file_info = []
     try:
         _file = open(filename, 'r')
-        file_info = [line.strip() for line in _file.readlines() if line!=""]
+        file_info = [line for line in _file.readlines() if line!=""]
         _file.close()
     except IOError:
         file_info = None
